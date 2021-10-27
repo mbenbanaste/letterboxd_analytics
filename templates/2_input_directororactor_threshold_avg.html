@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <style>
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            background: black;
+            background-image: none;
+            border:1px solid black;
+        }
+        .select {
+            position: relative;
+            display: block;
+            width: 17em;
+            height: 3em;
+            line-height: 3;
+            background: #2C3E50;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+        select {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0 0 0 .5em;
+            color: #fff;
+            cursor: pointer;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+        .select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0 1em;
+            background: #34495E;
+            pointer-events: none;
+        }
+        .select:hover::after {
+            color: #F39C12;
+        }
+        a:link, a:visited {
+          color: white;
+        }
+        body {
+        background-color: #111111;
+        }
+      </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+          function change_features_average_rating_of_actor_or_director() {
+                $.getJSON ({
+                    url:"/change_features_average_rating_of_actor_or_director",
+                    data: {
+                        'x': document.getElementById('mySelect').value ,
+                        'y': document.getElementById('mySelect2').value},
+                        {#'y_': document.getElementById('mySelect3').value ,#}
+                        {#'z': document.getElementById('mySelect4').value },#}
+                    success: function (result) {
+                        Plotly.newPlot('chart', result, {});
+                    }
+                });
+          }
+      </script>
+  </head>
+
+  <body style="font-family:Verdana, sans-serif">
+  <h6><a href="/">Return to index page</a></h6>
+          <center>
+            <div class="select">
+            <select name="option_list1" id="mySelect" onchange="change_features_average_rating_of_actor_or_director()">
+                <option>Choose director or actors</option>
+                {% for x in option_list1 %}
+                    <option value="{{x}}">{{x}}</option>
+                {% endfor %}
+                </select>-->
+            </div>
+            <br>
+            <div class="select">
+                <select name="option_list2" id="mySelect2" onchange="change_features_average_rating_of_actor_or_director()">
+{#                  <option>Choose start year</option>#}
+                    <option>Choose a threshold</option>
+                        {% for y in option_list2 %}
+                        <option value="{{y}}">{{y}}</option>
+                        {% endfor %}
+                </select>-->
+            </div>
+              <br>
+          </center>
+
+    <div id="chart" class="chart"></div>
+  </body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+</script>
+</html>

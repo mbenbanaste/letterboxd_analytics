@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        a:link, a:visited {
+          background-color: black;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        a:hover, a:active {
+          background-color: orangered;
+        }
+        body {
+        background-color: #111111;
+        }
+        #mydiv {
+        color:lightgreen;
+        font-family:Comic Sans MS, sans-serif;
+        font-size:20px;
+        }
+        #mydiv c {
+        color:white;
+        font-family:Monaco, sans-serif;
+        font-size:30px;
+        }
+        #mydiv b {
+        color:limegreen;
+        font-family:Comic Sans MS, sans-serif;
+        font-size:32px;
+        }
+    </style>
+</head>
+<body style="font-family:Verdana, sans-serif">
+    <h1 style="font-family:Verdana, sans-serif;color:orangered;font-size:50px">
+            Letterboxd Data
+    </h1>
+
+    <p id='mydiv'><b>General information on films watched:</b></p>
+    <ul>
+      <li id='mydiv'>The number of films watched is <c> {{number_of_films}} </c></li>
+      <li id='mydiv'> The number of minutes watched is <c> {{number_of_minutes}} </c></li>
+      <li id='mydiv'> The number of hours watched is <c> {{number_of_hours}} </c></li>
+      <li id='mydiv'>The number of unique directors watched is <c> {{number_of_directors}} </c></li>
+      <li id='mydiv'>The number of countries from which films watched is <c> {{number_of_countries}} </c></li>
+    </ul>
+
+    <p></p>
+    <p>Most?:</p>
+    <ul>
+        <h3><a href="most_watched_actors_or_directors_">Most watched actors or directors</a></h3>
+        <h3><a href="most_watched_actors_or_directors_per_genre_">Most watched actors or directors per genre</a></h3>
+        <h3><a href="most_watched_column_between_years">Most watched genre, country, director or actor/actress between years</a></h3>
+        <h3><a href="most_watched_actors_or_directors_per_country_">Most watched actors or directors per country</a></h3>
+    </ul>
+
+    <p>How many?:</p>
+    <ul>
+        <h3><a href="how_many_films_per_year">How many films per release year</a></h3>
+        <h3><a href="how_many_per_genre">How many films per Genre</a></h3>
+        <h3><a href="how_many_per_country">How many films per Country</a></h3>
+        <h3><a href="most_watched_column_per_release_year_">How many films from a genre or a country per year</a></h3>
+        <h3><a href="how_many_films_per_decade_">How many films per decade</a></h3>
+        <h3><a href="most_watched_column_per_decade_">How many films from a genre, a country, a director or an actor/actress per decade</a></h3>
+    </ul>
+
+    <p>Average Ratings:</p>
+    <ul>
+        <h3><a href="average_rated_column_">Average Ratings per Genre or Country</a></h3>
+        <h3><a href="average_rating_of_actor_or_director">Average Ratings per actor or director</a></h3>
+        <h3><a href="average_rating_per_year">Average Ratings per release year</a></h3>
+        <h3><a href="average_per_decade_">Average Ratings per decade</a></h3>
+        <h3><a href="highest_rated_column_per_decade_">Average Ratings per genre, country, director or actor/actress per decade</a></h3>
+        <h3><a href="highest_rated_column_between_years">Average Ratings per genre, country, director or actor/actress between years</a></h3>
+        <h3><a href="average_ratings_of_actor_or_director_per_genre_">Average Ratings for actors or directors per genre</a></h3>
+        <h3><a href="average_ratings_of_actor_or_director_per_country_">Average Ratings for actors or directors per country</a></h3>
+    </ul>
+
+</body>
+</html>
